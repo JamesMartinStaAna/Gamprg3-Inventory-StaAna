@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
+    public string Name;
+    public string ItemId;
+    public int ItemQuantity;
+    public bool IsUsable;
+
     // Start is called before the first frame update
     void Start()
     {
