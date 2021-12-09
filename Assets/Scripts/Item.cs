@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Items : MonoBehaviour
+public class Item : MonoBehaviour
 {
     public string Name;
     public string ItemId;
@@ -19,5 +19,10 @@ public class Items : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Use()
+    {
+
     }
 }
