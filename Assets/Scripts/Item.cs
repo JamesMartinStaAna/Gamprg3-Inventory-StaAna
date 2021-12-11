@@ -8,13 +8,18 @@ public class Item : MonoBehaviour
     public string ItemId;
     public Sprite Icon;
     public int ItemQuantity;
+    public int MaxItemQuantity;
     public bool IsUsable;
+    public bool IsFullStack;
+    [SerializeField] private Inventory playerInventory;
+    [SerializeField] private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        player = GameObject.FindWithTag("Player");
+        playerInventory = player.GetComponent<Inventory>();
+    } 
 
     // Update is called once per frame
     void Update()
@@ -22,17 +27,29 @@ public class Item : MonoBehaviour
         //Check if this object as no Quantity then delete from inventory
         if (ItemQuantity <= 0)
         {
-            Destroy(this);
+            
+            Destroy(this.gameObject);
+            playerInventory.itemsInSlots -= 1;
+
         }
+
     }
 
     public void Use()
     {
         if (IsUsable)
         {
-            //Activate 
+            //Activate other script for health, mana etc.
             Debug.Log("Using item! " + Name);
+            //Update ItemQuantity in inventory
             ItemQuantity -= 1;
+            
         }
+    }
+
+    private void OnDestroy()
+    {
+        playerInventory.Items.Remove(this);
+      
     }
 }

@@ -19,16 +19,30 @@ public class ItemUIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (ItemRef == null)
         {
+            //If object stack empty delete item UI
+            Destroy(gameObject);
             ItemDisplayIcon.overrideSprite = null;
             ItemQuantityText.text = "";
         }
         else
         {
             ItemDisplayIcon.overrideSprite = ItemRef.Icon;
-            ItemQuantityText.text = ItemRef.ItemQuantity.ToString();
+            if (ItemRef.ItemQuantity == 1)
+            {
+                ItemQuantityText.text = "";
+            }
+            else
+            {
+                ItemQuantityText.text = ItemRef.ItemQuantity.ToString();
+            }
+            
         }
+       
+     
     }
 
     public void OnClick()
@@ -37,5 +51,10 @@ public class ItemUIController : MonoBehaviour
         {
             ItemRef.Use();
         }
+    }
+
+    void OnDisable()
+    {
+        Destroy(gameObject);
     }
 }

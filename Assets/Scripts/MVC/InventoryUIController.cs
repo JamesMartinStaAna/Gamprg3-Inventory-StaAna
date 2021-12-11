@@ -19,7 +19,7 @@ public class InventoryUIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     void OnEnable()
@@ -32,13 +32,13 @@ public class InventoryUIController : MonoBehaviour
         //Check if there are items in inventroy then update Inventory UI display
         foreach (Item item in PlayerInventory.Items)
         {
-
+          
             GameObject itemUI = Instantiate(ItemHolderPrefab);
             itemUI.transform.SetParent(GridLayout, false);
 
             ItemUIController uiController = itemUI.GetComponent<ItemUIController>();
             uiController.ItemRef = item;
-
+    
 
         }
     }

@@ -16,7 +16,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && ItemToPickup != null)
+        if (Input.GetKeyDown(KeyCode.F) && ItemToPickup != null && Inventory.IsFull == false) 
         {
             Inventory.AddItem(ItemToPickup);
         }
