@@ -32,7 +32,7 @@ public class Inventory : MonoBehaviour
             if (currentItem.ItemId == itemToAdd.ItemId)
             {
                 currentItem.ItemQuantity += itemToAdd.ItemQuantity;
-                Destroy(itemToAdd);
+                Destroy(itemToAdd.gameObject);
                 return;
             }
         }
