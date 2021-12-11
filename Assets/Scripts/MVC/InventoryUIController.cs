@@ -29,16 +29,18 @@ public class InventoryUIController : MonoBehaviour
 
     public void RefreshDisplay()
     {
-         
         //Check if there are items in inventroy then update Inventory UI display
         foreach (Item item in PlayerInventory.Items)
         {
+
             GameObject itemUI = Instantiate(ItemHolderPrefab);
-            itemUI.transform.SetParent(GridLayout);
+            itemUI.transform.SetParent(GridLayout, false);
 
             ItemUIController uiController = itemUI.GetComponent<ItemUIController>();
             uiController.ItemRef = item;
 
+
         }
     }
+
 }

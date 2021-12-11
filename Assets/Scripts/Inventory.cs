@@ -8,8 +8,7 @@ public class Inventory : MonoBehaviour
     public List<Item> Items { get; private set; }
     //private InWorldItem WorldItem;
 
-    public bool[] IsFull;
-    public GameObject[] Itemslots;
+    public bool IsFull;
 
 
     // Start is called before the first frame update
@@ -51,21 +50,5 @@ public class Inventory : MonoBehaviour
         }
         Items.Add(duplicate);
 
-        //// Check if Slots are full or not 
-        //for (int i = 0; i < Itemslots.Length; i++)
-        //{
-        //    // If is there is a vacant slot add item
-        //    if (IsFull[i] == false)
-        //    {
-
-        //        IsFull[i] = true;
-        //        // 
-        //        Instantiate(WorldItem.ItemPrefab, Itemslots[i].transform, false);
-        //        Destroy(itemToAdd.gameObject);
-
-        //        break;
-
-        //    }
-        //}
     }
 }

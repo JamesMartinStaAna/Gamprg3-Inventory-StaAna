@@ -18,7 +18,7 @@ public class UIController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             InventoryUI.SetActive(!InventoryUI.activeInHierarchy);
-            Debug.Log("open");
+            Debug.Log("Inventory");
         }
     }
 }
