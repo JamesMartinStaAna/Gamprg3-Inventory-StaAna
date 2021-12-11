@@ -26,8 +26,7 @@ public class Item : MonoBehaviour
     {
         //Check if this object as no Quantity then delete from inventory
         if (ItemQuantity <= 0)
-        {
-            
+        {            
             Destroy(this.gameObject);
             playerInventory.itemsInSlots -= 1;
 
@@ -49,6 +48,7 @@ public class Item : MonoBehaviour
 
     private void OnDestroy()
     {
+        //Remove Object from List
         playerInventory.Items.Remove(this);
       
     }
