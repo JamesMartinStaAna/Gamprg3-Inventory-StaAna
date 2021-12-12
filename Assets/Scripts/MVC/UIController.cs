@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Toggle inventory
         if (Input.GetKeyDown(KeyCode.I))
         {
             InventoryUI.SetActive(!InventoryUI.activeInHierarchy);
